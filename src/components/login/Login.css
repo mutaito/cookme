@@ -1,0 +1,119 @@
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.profile-img
+{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+
+.account-wall
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+/*
+.login_btn_wrapper a.login_btn {
+    text-align: center;
+    text-transform: uppercase
+}*/
+
+.fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #2A284D;
+    height: 40px;
+    width: 90px
+}
+
+.fab:hover {
+    cursor: pointer
+}
+
+.fa-twitter {
+    color: #56ABEC
+}
+
+.fa-facebook {
+    color: #1775F1
+}
+
+.fa-google {
+    color: #CB5048
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);
+    border: none;
+    border-radius: 50px
+}
+
+.btn-primary:focus {
+    box-shadow: none;
+    border: none
+}
+
+small {
+    color: #F2CEFF
+}
+
+.far.fa-user {
+    font-size: 13px
+}
+
+/*
+.row-background{
+    background-color: #5947ad
+}*/
