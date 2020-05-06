@@ -73,7 +73,8 @@
     justify-content: center;
     align-items: center;
     border: none;
-    background: #2A284D;
+    /*background: #2A284D;*/
+    background: #da7d31;
     height: 40px;
     width: 90px
 }
@@ -95,7 +96,8 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);
+    /*background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);*/
+    background: linear-gradient(135deg, rgb(244, 175, 56) 39%, rgb(174, 50, 55) 101%);
     border: none;
     border-radius: 50px
 }
