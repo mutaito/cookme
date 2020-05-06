@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import "./Home.css";
+import "./Recipe.css";
 
-class Home extends Component {
+class Recipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      inputsRequired: true,
+      recipe:{
+        name: "",
+        type: "",
+        author: "",
+        created_at: ""
+      }
     };
 
   }
@@ -16,10 +19,10 @@ class Home extends Component {
     const state = JSON.stringify(this.state);
     return (
       <div className="row">
-        <h3>Home</h3>
+        <h3>Recipe</h3>
        <pre>{state}</pre>
       </div>
     );
   }
 }
-export default Home;
+export default Recipe;
