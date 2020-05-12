@@ -56,6 +56,11 @@ export default function Menu() {
                                 {<Link to="/" >Login</Link>}
                             </div>
                         </li>
+                        <li className="nav-item ">
+                            <div className="nav-link">
+                                {<Link to="/about" >Acerca de</Link>}
+                            </div>
+                        </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
                         <input

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+
 import "./Login.css";
 import logocook from "../../images/logocook.jpg";
+import { getAuth } from "../../service/index";
 
 class Login extends Component {
   constructor(props) {
@@ -10,38 +13,37 @@ class Login extends Component {
       password: "",
       inputsRequired: true,
     };
-    
-    this.setUsername = this.setUsername.bind(this);
-    this.setPassword = this.setPassword.bind(this);
   }
 
-  setUsername(username) {
+  setUsername = (username) => {
     this.setState({ username: username });
   }
 
-  setPassword(password) {
+  setPassword = (password) => {
     this.setState({ password: password });
   }
 
-  async send(event) {
+  send = async (event) => {
     event.preventDefault();
     const res = {
       username: this.state.username,
       password: this.state.password,
     };
-    console.log(res);
-    const val = await this.validate(res);
-    if (val) {
-        if( res.username === '' && res.password === '' ){
-           console.log('Login succes');
-
-        }
-      this.setState({
-        inputsRequired: false,
-      });
-      return
-      //this.props.send(res);
-      //this.closeModalHandler();
+    
+    if (true) {
+      if( res.username === '' && res.password === '' ){
+        console.log('Login succes');
+        const auntenticado = await getAuth();
+        if(auntenticado===true){
+          localStorage.setItem('auntenticado', true);
+          this.props.history.push("/home");
+        }else{
+          //localStorage.removeItem('auntenticado');
+          console.log('Error No auth')
+          this.props.history.push("/");
+        }         
+      }
+      
     } else {
       this.setState({
         inputsRequired: true,
@@ -49,7 +51,8 @@ class Login extends Component {
       //alert("Rellene los campos");
     }
   }
-  async validate(objectValidate) {
+  
+  validate = async (objectValidate) => {
     //console.log(objectValidate)
     var flag = true;
     for (var propertyForm in objectValidate) {
@@ -62,12 +65,14 @@ class Login extends Component {
     return flag;
   }
 
-  valueToState = ({ name, value, checked, type }) => {
+  valueToState = (event) => {
+    const { name, value, checked, type } = event.target
     //valueToState = (target) <-- { name, value, checked, type }
     this.setState(() => {
       return { [name]: type === "checkbox" ? checked : value };
     });
   };
+
   render() {
     return (
       <div className="row row-background">
@@ -87,7 +92,7 @@ class Login extends Component {
                 placeholder="Usuario"
                 name="username"
                 defaultValue={this.state.username}
-                onChange={(event) => this.valueToState(event.target)}
+                onChange={this.valueToState}
                 required
               />
               <input
@@ -95,14 +100,13 @@ class Login extends Component {
                 className="form-control"
                 placeholder="Contraseña"
                 name="password"
-                onChange={(event) => this.valueToState(event.target)}
+                onChange={this.valueToState}
                 defaultValue={this.state.password}
                 required
               />
               <button
                 className="btn btn-lg btn-primary btn-block"
-                onClick={(event) => this.send(event)}
-                //disabled={this.validateForm()}
+                onClick={this.send}
               >
                 Entrar
               </button>
@@ -128,4 +132,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default withRouter(Login);
